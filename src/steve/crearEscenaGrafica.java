@@ -41,6 +41,7 @@ public class crearEscenaGrafica {
     
     
     int pasos;
+    int baile=0;
     public crearEscenaGrafica() {   
         
         
@@ -329,6 +330,151 @@ public class crearEscenaGrafica {
                     pasos++;
                     TrasladarTg(tgPanza, 0.0f, 0.0f, 0.0f);
     }
+    public void bailar(){
+
+        if(baile<10){
+            girarTG(tgSpMusIzq, -2, "Y");
+            girarTG(tgSpMusDer, 2, "Y");
+            girarTG(tgSpMusIzq,-1,"Z");
+            girarTG(tgSpMusDer,1,"Z");
+            girarTG(tgSpMusIzq,-6,"X");
+            girarTG(tgSpMusDer,-6,"X");
+            girarTG(tgSpPrnDer,6,"X");
+            girarTG(tgSpPrnIzq,6,"X");
+            girarTG(tgSpHomIzq,-6,"Z");
+            girarTG(tgSpHomIzq,-6,"X");
+            girarTG(tgSpCodoIzq,4,"Z");
+            girarTG(tgSpHomDer,-2,"Z");
+            girarTG(tgSpHomDer,-2,"X");
+            TrasladarTg(tgPanza, 0.0f, -0.01f, 0.0f);
+            girarTG(tgPanza, 10, "Y");
+        }else 
+            if(baile<20){
+                girarTG(tgSpHomDer,-5,"X");
+                girarTG(tgSpMusDer, 5, "X");
+                girarTG(tgSpMusIzq, 5, "X");
+                TrasladarTg(tgPanza, 0.0f, 0.01f, 0.0f);
+                girarTG(tgSpPrnDer,-6,"X");
+                girarTG(tgSpPrnIzq,-6,"X");
+                girarTG(tgSpHomIzq,5,"X");
+                girarTG(tgSpCodoIzq,5,"Z");
+                girarTG(tgPanza, 10, "Y");
+            }else
+                if(baile<30){
+                    girarTG(tgSpHomDer,5,"X");
+                    girarTG(tgSpMusDer, -5, "X");
+                    girarTG(tgSpMusIzq, -5, "X");
+                    TrasladarTg(tgPanza, 0.0f, -0.01f, 0.0f);
+                    girarTG(tgSpPrnDer,6,"X");
+                    girarTG(tgSpPrnIzq,6,"X");
+                    girarTG(tgSpHomIzq,-5,"X");
+                    girarTG(tgSpCodoIzq,-5,"Z");
+                    girarTG(tgPanza, 10, "Y");
+                }else
+                    if(baile<40){
+                        girarTG(tgSpHomDer,-5,"X");
+                        girarTG(tgSpMusDer, 5, "X");
+                        girarTG(tgSpMusIzq, 5, "X");
+                        TrasladarTg(tgPanza, 0.0f, 0.01f, 0.0f);
+                        girarTG(tgSpPrnDer,-6,"X");
+                        girarTG(tgSpPrnIzq,-6,"X");
+                        girarTG(tgSpHomIzq,5,"X");
+                        girarTG(tgSpCodoIzq,5,"Z");
+                        girarTG(tgPanza, 10, "Y");
+                    }else
+                        if(baile<50){
+                            girarTG(tgSpHomDer,5,"X");
+                            girarTG(tgSpMusDer, -5, "X");
+                            girarTG(tgSpMusIzq, -5, "X");
+                            TrasladarTg(tgPanza, 0.0f, -0.01f, 0.0f);
+                            girarTG(tgSpPrnDer,6,"X");
+                            girarTG(tgSpPrnIzq,6,"X");
+                            girarTG(tgSpHomIzq,-5,"X");
+                            girarTG(tgSpCodoIzq,-5,"Z");
+                            girarTG(tgPanza, 10, "Y");
+                        }else
+                            if(baile<60){
+                                girarTG(tgSpHomDer,-5,"X");
+                                girarTG(tgSpMusDer, 5, "X");
+                                girarTG(tgSpMusIzq, 5, "X");
+                                TrasladarTg(tgPanza, 0.0f, 0.01f, 0.0f);
+                                girarTG(tgSpPrnDer,-6,"X");
+                                girarTG(tgSpPrnIzq,-6,"X");
+                                girarTG(tgSpHomIzq,5,"X");
+                                girarTG(tgSpCodoIzq,5,"Z");
+                                girarTG(tgPanza, 10, "Y");
+                            }else
+                                if(baile<70){
+                                    girarTG(tgSpHomDer,5,"X");
+                                    girarTG(tgSpMusDer, -5, "X");
+                                    girarTG(tgSpMusIzq, -5, "X");
+                                    TrasladarTg(tgPanza, 0.0f, -0.01f, 0.0f);
+                                    girarTG(tgSpPrnDer,6,"X");
+                                    girarTG(tgSpPrnIzq,6,"X");
+                                    girarTG(tgSpHomIzq,-5,"X");
+                                    girarTG(tgSpCodoIzq,-5,"Z");
+                                    girarTG(tgPanza, 10, "Y");
+                                }else
+                                    if(baile<80){
+                                        girarTG(tgSpHomDer,-5,"X");
+                                        girarTG(tgSpMusDer, 5, "X");
+                                        girarTG(tgSpMusIzq, 5, "X");
+                                        TrasladarTg(tgPanza, 0.0f, 0.01f, 0.0f);
+                                        girarTG(tgSpPrnDer,-6,"X");
+                                        girarTG(tgSpPrnIzq,-6,"X");
+                                        girarTG(tgSpHomIzq,5,"X");
+                                        girarTG(tgSpCodoIzq,5,"Z");
+                                        girarTG(tgPanza, 10, "Y");
+                                    }else
+                                        if(baile<90){
+                                            girarTG(tgSpHomDer,5,"X");
+                                            girarTG(tgSpMusDer, -5, "X");
+                                            girarTG(tgSpMusIzq, -5, "X");
+                                            TrasladarTg(tgPanza, 0.0f, -0.01f, 0.0f);
+                                            girarTG(tgSpPrnDer,6,"X");
+                                            girarTG(tgSpPrnIzq,6,"X");
+                                            girarTG(tgSpHomIzq,-5,"X");
+                                            girarTG(tgSpCodoIzq,-5,"Z");
+                                            girarTG(tgPanza, 10, "Y");
+                                        }else{
+                                            baile = 0;
+                                            resetearPosiciones();
+                                            TrasladarTg(tgPanza, 0.0f, 0.1f, 0.0f);
+                                        }
+
+        baile++;
+    }
+    
+    public void resetearPosiciones() {
+    // Brazos derechos
+    Transform3D t3d = new Transform3D();
+    t3d.set(new Vector3f(0.20f, 0.30f, 0.0f));
+    tgSpHomDer.setTransform(t3d);
+    
+    t3d.set(new Vector3f(0.0f, -0.15f, 0.0f));
+    tgSpCodoDer.setTransform(t3d);
+    
+    // Brazos izquierdos
+    t3d.set(new Vector3f(-0.20f, 0.30f, 0.0f));
+    tgSpHomIzq.setTransform(t3d);
+    
+    t3d.set(new Vector3f(0.0f, -0.15f, 0.0f));
+    tgSpCodoIzq.setTransform(t3d);
+    
+    // Piernas derechas
+    t3d.set(new Vector3d(0.10f,-0.30f,0.0f));
+    tgSpMusDer.setTransform(t3d);
+    
+    t3d.set(new Vector3d(0.0f,-0.15f,0.0f));
+    tgSpPrnDer.setTransform(t3d);
+    
+    // Piernas izquierdas
+    t3d.set(new Vector3d(-0.10f,-0.30f,0.0f));
+    tgSpMusIzq.setTransform(t3d);
+    
+    t3d.set(new Vector3d(0.0f,-0.15f,0.0f));
+    tgSpPrnIzq.setTransform(t3d);
+}
     
     private javax.sound.sampled.Clip clip;
     public void cargarSonido(String ruta) {
