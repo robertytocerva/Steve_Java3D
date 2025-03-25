@@ -9,6 +9,7 @@ import java.io.IOException;
 import javax.media.j3d.Appearance;
 import javax.media.j3d.BoundingSphere;
 import javax.media.j3d.BranchGroup;
+import javax.media.j3d.PointLight;
 import javax.media.j3d.Transform3D;
 import javax.media.j3d.TransformGroup;
 import javax.sound.sampled.AudioInputStream;
@@ -17,6 +18,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.vecmath.Color3f;
 import javax.vecmath.Point3d;
+import javax.vecmath.Point3f;
 import javax.vecmath.Vector3d;
 import javax.vecmath.Vector3f;
 
@@ -121,12 +123,11 @@ public class crearEscenaGrafica {
         tgSpPrnDer.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
         tgSpPrnIzq.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
         
-        Box mundo = new Box(-2.0f, 2.0f, 4.0f, paraTextura,textura.crearTexturas("cielo.jpg"));
-        mundo.setAppearance(1,textura.crearTexturas("fondoM.jpg"));
-        mundo.setAppearance(0,textura.crearTexturas("fondoM.jpg"));
-        mundo.setAppearance(2,textura.crearTexturas("fondoM.jpg"));
-        mundo.setAppearance(3,textura.crearTexturas("fondoM.jpg"));
-        mundo.setAppearance(5,textura.crearTexturas("pasto.jpg"));
+        Box mundo = new Box(-2.0f, 2.0f, 4.0f, paraTextura,textura.crearTexturas("FPjpg.jpg"));
+        mundo.setAppearance(1,textura.crearTexturas("F1.jpg"));
+        mundo.setAppearance(4,textura.crearTexturas("lamina.jpg"));
+        mundo.setAppearance(5,textura.crearTexturas("piso.jpg"));
+        mundo.setAppearance(0,textura.crearTexturas("eden.jpg"));
         Box bxPanza = new Box(0.20f, 0.3f, 0.1f, paraTextura,textura.crearTexturas("aTorso.jpg"));
         bxPanza.setAppearance(0,textura.crearTexturas("fTorso.jpg"));
         bxPanza.setAppearance(2,textura.crearTexturas("lTorso.jpg"));
@@ -178,7 +179,7 @@ public class crearEscenaGrafica {
         
         EscalarTG(tgPanza, 0.5f);
         MouseRotate myMouseRotate = new MouseRotate();
-        myMouseRotate.setTransformGroup(tgPanza);
+        myMouseRotate.setTransformGroup(tgMundo);
         myMouseRotate.setSchedulingBounds(new BoundingSphere());
         
         bgRaiz.addChild(myMouseRotate);
@@ -223,7 +224,14 @@ public class crearEscenaGrafica {
         tgPrnDer.addChild(bxPrnDer);
         tgPrnIzq.addChild(bxPrnIzq);
         tgCabeza.addChild(bxCabeza);
-         
+        
+        
+        
+        float intensidad = 1.0f;
+      
+        addPointLight(-5.0f, 50.0f, 50.0f, 255*intensidad, 0*intensidad, 0*intensidad);
+        addPointLight(2.0f, -50.0f, -50.0f, 255*intensidad, 0*intensidad, 0*intensidad);
+
     }
     
     public void EscalarTG(TransformGroup tg, float x){
@@ -493,4 +501,17 @@ public class crearEscenaGrafica {
             clip.start();
         }
     }
+    
+    public void addPointLight(float x, float y, float z, float r, float g, float b) {
+        BoundingSphere bounds = new BoundingSphere(new Point3d(0.0, 0.0, 0.0), 100.0);
+        
+        PointLight pointLight = new PointLight(
+            new Color3f(r, g, b),
+            new Point3f(x, y, z),
+            new Point3f(0.0f, 1.0f, 0.0f)  // Attenuation (constant, linear, quadratic)
+        );
+        pointLight.setInfluencingBounds(bounds);
+        bgRaiz.addChild(pointLight);
+    }
+
 }
