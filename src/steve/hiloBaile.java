@@ -21,6 +21,11 @@ public class hiloBaile extends Thread{
     
     @Override
     public void run(){
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(hiloBaile.class.getName()).log(Level.SEVERE, null, ex);
+        }
                 while (true) {
             escena.bailar();
             try {

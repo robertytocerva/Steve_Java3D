@@ -4,6 +4,7 @@ import com.sun.j3d.utils.behaviors.mouse.MouseRotate;
 import com.sun.j3d.utils.geometry.Box;
 import com.sun.j3d.utils.geometry.Primitive;
 import com.sun.j3d.utils.geometry.Sphere;
+import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import javax.media.j3d.Appearance;
@@ -40,7 +41,12 @@ public class crearEscenaGrafica {
     TransformGroup tgSpPrnIzq;
     TransformGroup tgPanza;
     TransformGroup tgMundo;
-    
+    private PointLight pointLight;
+    private Color3f lightColor;
+    private float hue = 0.0f; 
+    int r = 243;
+    int g = 33;
+    int b = 33;
     
     int pasos;
     int baile=0;
@@ -227,10 +233,10 @@ public class crearEscenaGrafica {
         
         
         
+        
         float intensidad = 1.0f;
-      
-        addPointLight(-5.0f, 50.0f, 50.0f, 255*intensidad, 0*intensidad, 0*intensidad);
-        addPointLight(2.0f, -50.0f, -50.0f, 255*intensidad, 0*intensidad, 0*intensidad);
+        addPointLight(-5.0f, 50.0f, 50.0f, r*intensidad, g*intensidad, b*intensidad);
+        addPointLight(2.0f, -50.0f, -50.0f, r*intensidad, g*intensidad, b*intensidad);
 
     }
     
@@ -341,6 +347,7 @@ public class crearEscenaGrafica {
     public void bailar(){
 
         if(baile<10){
+            
             girarTG(tgSpMusIzq, -2, "Y");
             girarTG(tgSpMusDer, 2, "Y");
             girarTG(tgSpMusIzq,-1,"Z");
@@ -355,9 +362,12 @@ public class crearEscenaGrafica {
             girarTG(tgSpHomDer,-2,"Z");
             girarTG(tgSpHomDer,-2,"X");
             TrasladarTg(tgPanza, 0.0f, -0.01f, 0.0f);
-            girarTG(tgPanza, 10, "Y");
+            girarTG(tgPanza, 5, "Y");
         }else 
             if(baile<20){
+                r = 0;
+                g = 255;
+                b =0;
                 girarTG(tgSpHomDer,-5,"X");
                 girarTG(tgSpMusDer, 5, "X");
                 girarTG(tgSpMusIzq, 5, "X");
@@ -377,7 +387,7 @@ public class crearEscenaGrafica {
                     girarTG(tgSpPrnIzq,6,"X");
                     girarTG(tgSpHomIzq,-5,"X");
                     girarTG(tgSpCodoIzq,-5,"Z");
-                    girarTG(tgPanza, 10, "Y");
+                    girarTG(tgPanza, 5, "Y");
                 }else
                     if(baile<40){
                         girarTG(tgSpHomDer,-5,"X");
@@ -388,7 +398,7 @@ public class crearEscenaGrafica {
                         girarTG(tgSpPrnIzq,-6,"X");
                         girarTG(tgSpHomIzq,5,"X");
                         girarTG(tgSpCodoIzq,5,"Z");
-                        girarTG(tgPanza, 10, "Y");
+                        girarTG(tgPanza, 5, "Y");
                     }else
                         if(baile<50){
                             girarTG(tgSpHomDer,5,"X");
@@ -399,7 +409,7 @@ public class crearEscenaGrafica {
                             girarTG(tgSpPrnIzq,6,"X");
                             girarTG(tgSpHomIzq,-5,"X");
                             girarTG(tgSpCodoIzq,-5,"Z");
-                            girarTG(tgPanza, 10, "Y");
+                            girarTG(tgPanza, 5, "Y");
                         }else
                             if(baile<60){
                                 girarTG(tgSpHomDer,-5,"X");
@@ -410,7 +420,7 @@ public class crearEscenaGrafica {
                                 girarTG(tgSpPrnIzq,-6,"X");
                                 girarTG(tgSpHomIzq,5,"X");
                                 girarTG(tgSpCodoIzq,5,"Z");
-                                girarTG(tgPanza, 10, "Y");
+                                girarTG(tgPanza, 5, "Y");
                             }else
                                 if(baile<70){
                                     girarTG(tgSpHomDer,5,"X");
@@ -421,7 +431,7 @@ public class crearEscenaGrafica {
                                     girarTG(tgSpPrnIzq,6,"X");
                                     girarTG(tgSpHomIzq,-5,"X");
                                     girarTG(tgSpCodoIzq,-5,"Z");
-                                    girarTG(tgPanza, 10, "Y");
+                                    girarTG(tgPanza, 5, "Y");
                                 }else
                                     if(baile<80){
                                         girarTG(tgSpHomDer,-5,"X");
@@ -432,7 +442,7 @@ public class crearEscenaGrafica {
                                         girarTG(tgSpPrnIzq,-6,"X");
                                         girarTG(tgSpHomIzq,5,"X");
                                         girarTG(tgSpCodoIzq,5,"Z");
-                                        girarTG(tgPanza, 10, "Y");
+                                        girarTG(tgPanza, 5, "Y");
                                     }else
                                         if(baile<90){
                                             girarTG(tgSpHomDer,5,"X");
@@ -443,7 +453,7 @@ public class crearEscenaGrafica {
                                             girarTG(tgSpPrnIzq,6,"X");
                                             girarTG(tgSpHomIzq,-5,"X");
                                             girarTG(tgSpCodoIzq,-5,"Z");
-                                            girarTG(tgPanza, 10, "Y");
+                                            girarTG(tgPanza, 5, "Y");
                                         }else{
                                             baile = 0;
                                             resetearPosiciones();
@@ -513,5 +523,4 @@ public class crearEscenaGrafica {
         pointLight.setInfluencingBounds(bounds);
         bgRaiz.addChild(pointLight);
     }
-
 }
