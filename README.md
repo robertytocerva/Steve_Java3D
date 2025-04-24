@@ -26,14 +26,10 @@ Steve Bailarín es un proyecto desarrollado en Java3D que presenta un personaje 
 ## Uso
 
 - Ejecutar `Main.java` para iniciar la animación.
-- Usar la tecla **Espacio** para iniciar/detener la animación.
+- Usar los **Botones** para iniciar/detener la animación.
 - Modificar los valores en `TransformGroup` para personalizar los movimientos.
 
-## Licencia
 
-Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo `LICENSE` para más información.
-
----
 
 Cualquier duda o sugerencia, no dudes en crear un issue en el repositorio. ¡Espero que disfrutes viendo bailar a Steve! 🎵🕺
 
