@@ -306,7 +306,7 @@ public class steve extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here
-        creaEscena.cargarSonido("\\Users\\rober\\Music\\laVecinita.wav");
+        creaEscena.cargarSonido("src\\musica\\laVecinita.wav");
         creaEscena.reproducir(); 
         
         
